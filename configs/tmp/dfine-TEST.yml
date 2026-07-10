@@ -1,0 +1,15 @@
+__include__: [
+  '../dataset/custom_detection.yml',
+  '../runtime.yml',
+  '../base/dataloader_dfine.yml',
+  '../base/optimizer.yml',
+  '../base/dfine_hgnetv2.yml',
+  '../base/common.yml'
+]
+
+comment: 'dfine-s-TEST, s'
+
+output_dir: ./outputs/dfine-s-TEST
+
+DEIM_MG:
+  yaml_path: configs/cfg/dfine-s-hyper.yaml

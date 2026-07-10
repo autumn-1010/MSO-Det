@@ -1,0 +1,33 @@
+__include__: [
+  '../dfine/dfine_hgnetv2_n_custom.yml',
+  '../dataset/custom_detection.yml',
+  '../base/deim.yml',
+  '../base/common.yml'
+]
+
+output_dir: ./outputs/deim
+
+
+DEIM_MG:
+  yaml_path: configs/cfg/dfine-n.yaml
+
+
+# Increase to search for the optimal ema
+epoches: 160 # 148 + 12
+
+## Our LR-Scheduler
+flat_epoch: 78    # 4 + epoch // 2, e.g., 40 = 4 + 72 / 2
+no_aug_epoch: 12
+lr_gamma: 1.0
+
+## Our DataAug
+train_dataloader: 
+  dataset: 
+    transforms:
+      policy:
+        epoch: [4, 78, 148]   # list 
+
+  collate_fn:
+    mixup_epochs: [4, 78]
+    stop_epoch: 148
+    base_size_repeat: ~

@@ -1,0 +1,38 @@
+__include__: [
+  '../dataset/custom_detection.yml',
+  '../runtime.yml',
+  '../base/dataloader_dfine.yml',
+  '../base/optimizer.yml',
+  '../base/dfine_hgnetv2.yml',
+  '../base/common.yml'
+]
+
+comment: ''
+
+output_dir: ./outputs/mso-det
+
+
+DEIM_MG:
+  yaml_path: configs/cfg/mso-det.yaml
+
+criterion: CriterionWithUGDR
+
+CriterionWithUGDR:
+  enable_ugdr: True
+  ugdr_weight: 1.0
+  beta_schedule: 'linear'
+  beta_start: 1.0
+  beta_end: 0.1
+  
+  base_criterion: 'DEIMCriterion'
+  weight_dict: {loss_vfl: 1, loss_bbox: 5, loss_giou: 2, loss_fgl: 0.15, loss_ddf: 1.5}
+  losses: ['vfl', 'boxes', 'local']
+  alpha: 0.75
+  gamma: 2.0
+  reg_max: 32
+  
+  matcher:
+    type: HungarianMatcher
+    weight_dict: {cost_class: 2, cost_bbox: 5, cost_giou: 2}
+    alpha: 0.25
+    gamma: 2.0

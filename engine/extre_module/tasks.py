@@ -42,10 +42,7 @@ from engine.extre_module.custom_nn.module.nnWNet import *
 from engine.extre_module.custom_nn.module.ARF import ARF
 from engine.extre_module.custom_nn.module.LWGA import LWGA
 
-# Paper First: 论文第一篇的创新模块
-# HyperGraphEnhance模块集成
 from engine.paper_first import HyperGraphEnhance, Route
-# Wave模块集成
 from engine.paper_first import WaveEncoderBlock, WaveEncoderBlockV2
 
 RED, GREEN, BLUE, YELLOW, ORANGE, RESET = "\033[91m", "\033[92m", "\033[94m", "\033[93m", "\033[38;5;208m", "\033[0m"
@@ -53,7 +50,7 @@ logger = get_logger(__name__)
    
 __all__ = ['DEIM_MG'] 
   
-@register(force=True) # 避免因为导入导致的多次注册    
+@register(force=True) 
 class DEIM_MG(nn.Module):    
     __share__ = ['num_classes', 'eval_spatial_size']
     def __init__(self, \
@@ -222,7 +219,7 @@ def parse_module(d, i, f, m, args, ch, nc=None, eval_spatial_size=None):
     elif m in {TransformerEncoderBlock}:    
         c2 = ch[f]
         args = [c2, *args]
-    elif m in {WaveEncoderBlock, WaveEncoderBlockV2}:  # Wave模块处理
+    elif m in {WaveEncoderBlock, WaveEncoderBlockV2}:  
         c2 = ch[f]
         args = [c2, *args]
     elif m is Concat: 
@@ -230,7 +227,7 @@ def parse_module(d, i, f, m, args, ch, nc=None, eval_spatial_size=None):
     elif m in {ContrastDrivenFeatureAggregation, DownsampleConv}: # attention    
         c2 = ch[f]     
         args = [c2, *args]
-    elif m in {AWTConv2d, WTConv2d, DARAConv2d}: # 处理所有只改通道，不改尺寸的模块。
+    elif m in {AWTConv2d, WTConv2d, DARAConv2d}: 
         c1, c2 = ch[f], args[0]   
         args = [c1, c2, *args[1:]] 
     elif m in {PSConv, ADown, Conv}: # Conv
@@ -251,10 +248,8 @@ def parse_module(d, i, f, m, args, ch, nc=None, eval_spatial_size=None):
     elif m in {HyperComputeModule}: 
         c2 = ch[f]    
         args = [c2, *args]   
-    elif m is HyperGraphEnhance:  # 超图多尺度增强: 输入多个尺度，输出增强后的多尺度特征
-        # 输入是多个尺度的特征 [P3, P4, P5]，输出也是多个尺度
-        # 这里c2应该保持为最后一个输入的通道数（因为后续decoder需要）
-        c2 = ch[f[-1]]  # 使用最后一个输入的通道数
+    elif m is HyperGraphEnhance: 
+        c2 = ch[f[-1]]  
         args = [args[0], *args[1:]]  # hidden_dim, threshold, target_size, residual_weight
     elif m is Route:
         args = [*args]
@@ -269,7 +264,7 @@ def parse_module(d, i, f, m, args, ch, nc=None, eval_spatial_size=None):
         c1 = [ch[i] for i in f]
         c2 = args[0] 
         args = [c1, c2, *args[1:]] 
-    elif m in {FocusFeature}:  # 多尺度融合模块
+    elif m in {FocusFeature}:  
         c1 = [ch[i] for i in f]
         c2 = c1[1]    
         args = [c1, *args]   

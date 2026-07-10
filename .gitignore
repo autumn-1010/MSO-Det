@@ -153,9 +153,6 @@ configs/test/cutmark.yml
 configs/test/dfine_hgnetv2_s_seg.yml
 
 
-data/
-engine/extre_module/24/
-archive/
 *paper*/
 !engine/paper_first
 !project_paper

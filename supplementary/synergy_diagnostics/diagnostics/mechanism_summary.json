@@ -1,0 +1,204 @@
+{
+  "backward_images": 64,
+  "feature_responses": {
+    "ASWB output": {
+      "ci_high": 1.286555916070938,
+      "ci_low": 1.2742870450019836,
+      "mean": 1.2804857697337866
+    },
+    "Decoder boxes": {
+      "ci_high": 0.728003665804863,
+      "ci_low": 0.6941407471895218,
+      "mean": 0.7108275396749377
+    },
+    "Decoder logits": {
+      "ci_high": 0.5664044017903507,
+      "ci_low": 0.508281753398478,
+      "mean": 0.5375870715361089
+    },
+    "MSIA input": {
+      "ci_high": 0.5465244050137699,
+      "ci_low": 0.50829640426673,
+      "mean": 0.5289019199553877
+    },
+    "MSIA output": {
+      "ci_high": 0.3408837190363556,
+      "ci_low": 0.31651527783833444,
+      "mean": 0.32931197970174253
+    }
+  },
+  "forward_images": 64,
+  "gradient_groups": {
+    "ASWB": {
+      "standard_ugdr_cosine": {
+        "ci_high": 0.9671618364285677,
+        "ci_low": 0.8688845817086985,
+        "max": 0.9998722672462463,
+        "mean": 0.9262637690408155,
+        "median": 0.9853964447975159,
+        "min": -0.3719264268875122
+      },
+      "ugdr_to_standard_norm_ratio": {
+        "ci_high": 0.9726689097471535,
+        "ci_low": 0.8265891860704869,
+        "max": 2.0890204906463623,
+        "mean": 0.8949152170680463,
+        "median": 0.8071961402893066,
+        "min": 0.4241667091846466
+      },
+      "uncertainty_to_ugdr_norm_ratio": {
+        "ci_high": 0.44064420042144525,
+        "ci_low": 0.2823654226627268,
+        "max": 1.9562197596109925,
+        "mean": 0.3536112916840817,
+        "median": 0.2487037073600221,
+        "min": 0.04809605397048641
+      }
+    },
+    "Decoder": {
+      "standard_ugdr_cosine": {
+        "ci_high": 0.9759728469187394,
+        "ci_low": 0.9713146936846897,
+        "max": 0.9955621957778931,
+        "mean": 0.9736777488142252,
+        "median": 0.9738236963748932,
+        "min": 0.9460225105285645
+      },
+      "ugdr_to_standard_norm_ratio": {
+        "ci_high": 1.0891143576707691,
+        "ci_low": 1.0443032172042876,
+        "max": 1.2425448894500732,
+        "mean": 1.06636758800596,
+        "median": 1.065687656402588,
+        "min": 0.8790819048881531
+      },
+      "uncertainty_to_ugdr_norm_ratio": {
+        "ci_high": 0.3004528860068794,
+        "ci_low": 0.27144458338836086,
+        "max": 0.3801700641217348,
+        "mean": 0.28651271400502437,
+        "median": 0.2962132340922855,
+        "min": 0.09980936152926902
+      }
+    },
+    "MSIA": {
+      "standard_ugdr_cosine": {
+        "ci_high": 0.9741630399599671,
+        "ci_low": 0.9618805380770936,
+        "max": 0.9976985454559326,
+        "mean": 0.9683419764041901,
+        "median": 0.9740999639034271,
+        "min": 0.893695592880249
+      },
+      "ugdr_to_standard_norm_ratio": {
+        "ci_high": 0.9552877177251503,
+        "ci_low": 0.9026125763077288,
+        "max": 1.2589322328567505,
+        "mean": 0.9280001986771822,
+        "median": 0.9034877419471741,
+        "min": 0.7724777460098267
+      },
+      "uncertainty_to_ugdr_norm_ratio": {
+        "ci_high": 0.2774538688795971,
+        "ci_low": 0.22812620546054999,
+        "max": 0.4712227152241611,
+        "mean": 0.25274916628653704,
+        "median": 0.25539194684612143,
+        "min": 0.07427244966310552
+      }
+    }
+  },
+  "high_frequency_ratio": {
+    "change": {
+      "ci_high": -0.14274548786124797,
+      "ci_low": -0.1517404127498594,
+      "mean": -0.14736100240043015
+    },
+    "input_mean": 0.14959182566963136,
+    "output_mean": 0.0022308232692012098
+  },
+  "matched_boxes": 3364,
+  "topology": {
+    "active_nodes_mean": 302.494697265625,
+    "bypass_nodes_mean": 220.87394531249998,
+    "changed_pair_fraction": {
+      "ci_high": 0.08497444458007812,
+      "ci_low": 0.06795285034179688,
+      "mean": 0.07690850219726562
+    },
+    "images": 64,
+    "jaccard": {
+      "ci_high": 0.6180799766744882,
+      "ci_low": 0.5833192226523108,
+      "mean": 0.6007676092853643
+    },
+    "paired_change_ci95": [
+      70.36286547851562,
+      93.0229521484375
+    ],
+    "paired_change_mean": 81.620751953125,
+    "positive_images": 64
+  },
+  "uncertainty": {
+    "localization_error_clustered_ci95": [
+      0.4558322438556122,
+      0.5643218681681108
+    ],
+    "localization_error_spearman": 0.5155473143357664,
+    "occlusion_clustered_ci95": [
+      0.04365620725982333,
+      0.1755769730298089
+    ],
+    "occlusion_spearman": 0.11229997024947007,
+    "quartiles": [
+      {
+        "boxes": 841,
+        "images": 62,
+        "localization_error": 0.22433322977358264,
+        "localization_error_ci_high": 0.24869581370223404,
+        "localization_error_ci_low": 0.20314811627100318,
+        "overlap_ratio": 0.08814258560677825,
+        "overlap_ratio_ci_high": 0.12446016600790481,
+        "overlap_ratio_ci_low": 0.05808823365394889,
+        "quartile": 1,
+        "uncertainty": 0.3163005022883557
+      },
+      {
+        "boxes": 841,
+        "images": 63,
+        "localization_error": 0.33124943062116025,
+        "localization_error_ci_high": 0.3556786713620106,
+        "localization_error_ci_low": 0.3103778398199075,
+        "overlap_ratio": 0.08835512629611025,
+        "overlap_ratio_ci_high": 0.10839792595891093,
+        "overlap_ratio_ci_low": 0.06939166941026813,
+        "quartile": 2,
+        "uncertainty": 0.3641876884150307
+      },
+      {
+        "boxes": 841,
+        "images": 64,
+        "localization_error": 0.41142854587858496,
+        "localization_error_ci_high": 0.4380177814151988,
+        "localization_error_ci_low": 0.388693324968191,
+        "overlap_ratio": 0.11559505434765638,
+        "overlap_ratio_ci_high": 0.15215590075878604,
+        "overlap_ratio_ci_low": 0.08399435782735729,
+        "quartile": 3,
+        "uncertainty": 0.4003878445248258
+      },
+      {
+        "boxes": 841,
+        "images": 63,
+        "localization_error": 0.5054213419837897,
+        "localization_error_ci_high": 0.5275950840089235,
+        "localization_error_ci_low": 0.480901479859395,
+        "overlap_ratio": 0.18471727001634636,
+        "overlap_ratio_ci_high": 0.2384929552601915,
+        "overlap_ratio_ci_low": 0.13613427597331373,
+        "quartile": 4,
+        "uncertainty": 0.4619236974738866
+      }
+    ]
+  }
+}

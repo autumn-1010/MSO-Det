@@ -1,0 +1,29 @@
+{
+  "data_provenance": {
+    "runs": [
+      "Baseline",
+      "ASWB",
+      "MSIA",
+      "UGDR",
+      "ASWB+MSIA",
+      "ASWB+UGDR",
+      "MSIA+UGDR",
+      "Ours"
+    ],
+    "epochs_per_run": 72,
+    "seed": 42,
+    "endpoint": "final epoch",
+    "trace_metrics": [
+      "AP",
+      "AP75"
+    ]
+  },
+  "isolated_gain_retention_efficiency": {
+    "definition": "full-model AP gain / sum of isolated-module AP gains",
+    "reported_table_percent": 85.5,
+    "unrounded_log_percent": 85.3,
+    "rounding_note": "The manuscript value uses the one-decimal AP values reported in the ablation table; the unrounded logs differ by 0.2 percentage points."
+  },
+  "endpoint_all_conditional_ap_gains_positive": true,
+  "minimum_endpoint_conditional_ap_gain": 0.55852
+}
